@@ -55,7 +55,7 @@ public class Main {
                         System.out.println("현재 등록된 리뷰가 없습니다.");
                     } else {
                         for (VideoReview review : reviews) {
-                            System.out.println("리뷰 번호: " + review.getReviewNo() + ", 내용: " + review.getContent());
+                            System.out.println("리뷰 내용: " + review.getContent());
                         }
                     }
                     
@@ -72,7 +72,7 @@ public class Main {
                         System.out.print("리뷰 내용을 입력하세요: ");
                         scanner.nextLine(); // 버퍼 비우기
                         String reviewContent = scanner.nextLine();
-                        VideoReview newReview = new VideoReview();
+                        VideoReview newReview = new VideoReview(selectedVideo.getNo(), 0, reviewContent);
                         reviewManager.addReview(newReview);
                         System.out.println("리뷰가 등록되었습니다: " + reviewContent);
                     }
