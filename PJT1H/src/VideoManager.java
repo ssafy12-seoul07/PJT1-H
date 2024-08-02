@@ -1,12 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
-import java.io.*;
 
 public class VideoManager {
     private List<Video> videoList;  // 비디오 목록
     private static VideoManager instance;  // Singleton instance
-    
-    BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
 
     // 생성자
     private VideoManager() {

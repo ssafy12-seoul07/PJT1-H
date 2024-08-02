@@ -1,11 +1,14 @@
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException{
         VideoManager videoManager = VideoManager.getInstance();
         ReviewManager reviewManager = ReviewManager.getInstance();
         Scanner scanner = new Scanner(System.in);
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
 
         // 샘플 비디오 추가
         videoManager.addVideo(new Video(1, "Sample Video 1", "Part 1", "http://example.com/1"));
