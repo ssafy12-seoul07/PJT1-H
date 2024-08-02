@@ -1,10 +1,10 @@
 # PJT1-H java관통 project
-* 팀원 : 민서, 서현
+* 팀원 : 고민서, 김서현
 
 ## 0. 명세서확인 및 클래스 구성
 - 함께 명세서를 보고 클래스 구조를 상의
 - video와 review 클래스를 정의하고 각각의 내용을 관리하는 Manager 클래스를 정의하기로 결정
-- Manager클래스는 singleton 패턴으로 작성하기로 함(이유: manager객체의 instance는 1개만 있어도 되기 때문에 무분별하게 manager instance를 생성하지 않도록 하기위함)
+- Manager클래스는 singleton 패턴으로 작성하기로 함(이유: manager객체의 instance는 1개만 있어도 되기 때문에. 무분별하게 manager instance를 생성하지 않도록 하기위함.)
 
 ## 1. 클래스 다이어그램 prompt 명령내용 작성
 - Video.java
@@ -40,7 +40,6 @@ Methods :
 
 
 ```
-
 - Review.java
 ```
 Class : Review
@@ -84,7 +83,7 @@ Methods :
 
 ## 4. ChatGPT에게 검수 받기
 1. Review 클래스 이름 변경
-   - Review에서 VideoReview로
+   - Review에서 VideoReview로 변경
 2. VideoReview 클래스와 ReviewManager 클래스 사이의 관계
    - VideoReview 클래스에서 ReviewManager 클래스로의 연관 관계는 잘 정의되어 있습니다.
    - ReviewManager 클래스의 insertReview 메소드가 int를 반환하는데, 이는 리뷰를 성공적으로 삽입했는지 여부를 반환하는 것으로 보입니다. 하지만 반환값의 의미를 명확히 하는 것이 좋습니다.
@@ -98,3 +97,5 @@ Methods :
    - VideoManager와 ReviewManager 클래스는 싱글톤 패턴을 사용하고 있습니다. getInstance() 메소드가 각 클래스에서 인스턴스를 반환하는 것을 명시하고 있어 좋습니다.
 6. 전반적인 UML 구성:
    - UML 다이어그램의 전반적인 구조는 잘 잡혀 있습니다. 클래스 간의 관계 및 메소드, 속성들이 명확하게 정의되어 있습니다.
+
+## 5. 검수받은 내용을 적용하여 java파일 작성

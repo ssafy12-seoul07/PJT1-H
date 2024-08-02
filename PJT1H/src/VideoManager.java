@@ -18,8 +18,8 @@ public class VideoManager {
         return instance;
     }
 
-    // 비디오 목록을 선택하여 반환하는 메소드
-    public List<Video> selectVideo() {
+    // 비디오 목록을 반환하는 메소드
+    public List<Video> selectVideos() {
         return videoList;
     }
 
@@ -33,7 +33,7 @@ public class VideoManager {
         return null; // 비디오를 찾지 못한 경우 null 반환
     }
 
-    // 비디오를 목록에 추가하는 메소드 (추가 기능)
+    // 비디오를 목록에 추가하는 메소드
     public void addVideo(Video video) {
         videoList.add(video);
     }

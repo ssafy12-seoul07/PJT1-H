@@ -16,7 +16,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
 
-      //파일 가져오기
+      	//파일 가져오기
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
         String str = null; //한줄씩 읽어오기 위한 임시변수
         StringBuilder sb = new StringBuilder();
@@ -32,7 +32,6 @@ public class Main {
         	videoManager.addVideo(arr[i]);
         }
        
-
         while (true) {
         	System.out.println("==============================================================");
             // 메뉴 출력
@@ -45,7 +44,7 @@ public class Main {
             if (choice == 1) {
             	
                 // 영상 목록 출력
-                List<Video> videos = videoManager.selectVideo();
+                List<Video> videos = videoManager.selectVideos();
                 System.out.println("영상 목록:");
                 for (Video video : videos) {
                     System.out.println("번호: " + video.getNo() + ", 제목: " + video.getTitle());
@@ -98,16 +97,18 @@ public class Main {
                         reviewManager.addReview(newReview);
                         System.out.println("리뷰가 등록되었습니다: " + reviewContent);
                     }
-                } else {
+                }
+				else {
                     System.out.println("해당 번호의 영상이 존재하지 않습니다.");
                 }
-            } else if (choice == 2) {
+            }
+			else if (choice == 2) {
                 System.out.println("프로그램을 종료합니다.");
                 break;  // 종료
-            } else {
+            }
+			else {
                 System.out.println("잘못된 선택입니다. 다시 입력해주세요.");
             }
-            System.out.println();  // 줄 바꿈
         }
 
         scanner.close();  // 스캐너 닫기
