@@ -1,39 +1,84 @@
-# PJT1 - java
+# PJT1-H java관통 project
+* 팀원 : 민서, 서현
 
-## 팀
-* A: 인애, 혜원K, 홍균
-* B: 혜민, 정우, 은서
-* C: 희주, 유영, 재현
-* D: 윤준, 성현
-* E: 현수, 보성
-* F: 지운, 진호
-* G: 소현, 혁규, 장한
-* H: 민서, 서현
-* I: 준환, 승빈, 서하
+## 0. 명세서확인 및 클래스 구성
+- 함께 명세서를 보고 클래스 구조를 상의
+- video와 review 클래스를 정의하고 각각의 내용을 관리하는 Manager 클래스를 정의하기로 결정
+- Manager클래스는 singleton 패턴으로 작성하기로 함(이유: manager객체의 instance는 1개만 있어도 되기 때문에 무분별하게 manager instance를 생성하지 않도록 하기위함)
 
-* 팀장, 팀원 정하기 
-## 조직내에서 레포 생성
-[ssafy12-seoul07 조직](https://github.com/ssafy12-seoul07)
+## 1. 클래스 다이어그램 prompt 명령내용 작성
+- Video.java
+```
+Class : Video
+Attributes :
+  - no : int
+  - title : String
+  - part : String
+  - url :String
+Methods : 
+  + getNo() : int
+  + setNo(no : int) : void
+  + getTitle() : String
+  + setTitle(title : String) : void
+  + getPart(): String
+  + setPart(part : String) : void
+  + getUrl(): String
+  + setUrl(url : String) : void
 
-`팀장만 레포 생성`
+```
+- VideoManager.java
+```
+Class : VideoManager
+Attributes :
+  - videoList : List<Video>
+  - instance : VideoManager
+Methods : 
+-VideoManager()
+  + getInstance() : VideoManager
+  + selectVideo() : List<Video>
+  + selectVideoByNo(no : int) :Video
 
-* 레포 이름은 `PJT1-{팀 알파벳}`
-  * ex. `PJT1-A`
 
+```
 
-## 제출 방법 및 기한
-* 파일 제출이 아니라, 깃헙에 push된 코드로 채점
-* pjt01은 완성도에 집중하지 말고 
-  * `어떻게 PJT를 진행하면 좋을지`
-  * `협업은 어떻게 하는게 좋은지`
-  * `갈등은 어떻게 해결하면 좋은지`
-  * `명세를 어떻게 해석하는지` 
-  * `기능 기획 및 구현은 어떻게 하는지`
-* 팀원들 모두 각자의 `README.md` 작성 필수 
-  * ex. `재현_README.md` , `혜민_README.md` 
-  * FAQ: 
-    * 최상단에 각자 이름의 폴더를 만들어서 README.md 작성해도 괜찮아요.
-    * 정해진 규율은 없습니다. 
-    * 여러분이 만들어가시면 됩니다. 뭐가 좋고 나쁘고는 없습니다. 
-  * 프로젝트의 전체적인 구상도와 설계 그리고 뭘 배웠고 느꼈는지 최소한 a4 두장 분량은 될 수 있도록
-* 익일 2024/08/03 PM 11:59:59
+- Review.java
+```
+Class : Review
+Attributes :
+  - videoNo : int
+  - reviewNo : String
+  - content :String
+Methods : 
+  + getVideoNo() : int
+  + setVideoNo(VideoNo:int) : void
+  + getReviewNo() : int
+  + setReviewNo(reviewNo:int) : void
+  + getContent() : String
+  + setContent(content:String) : void
+
+```
+- ReviewManager.java
+```
+Class : ReviewManager
+Attributes :
+  - reviewNo : int
+  - videoReviewDb : Map<Integer,List<VideoReview>>
+  - instance : ReviewManager
+Methods : 
+  - ReviewManager()
+  + getInstance() : ReviewManager
+  + insertReview(videoReview : VideoReview) : int
+  + selectReview(videoNo : int) : List<VideoReview>
+
+```
+- Main.java
+```
+Class : Main
+Methods :
+  + main(args:String[]) : void
+```
+
+## 3. 클래스 간의 관계 정의
+1. 
+
+## 4. 구현
