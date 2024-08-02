@@ -1,10 +1,12 @@
-public class Review {
+public class VideoReview {
     private int videoNo;      // 비디오 번호
-    private String reviewNo;  // 리뷰 번호
+    private int reviewNo;  // 리뷰 번호
     private String content;    // 리뷰 내용
 
+    public VideoReview() {}
+    
     // 생성자
-    public Review(int videoNo, String reviewNo, String content) {
+    public VideoReview(int videoNo, int reviewNo, String content) {
         this.videoNo = videoNo;
         this.reviewNo = reviewNo;
         this.content = content;
@@ -21,12 +23,12 @@ public class Review {
     }
 
     // 리뷰 번호 getter
-    public String getReviewNo() {
+    public int getReviewNo() {
         return reviewNo;
     }
 
     // 리뷰 번호 setter
-    public void setReviewNo(String reviewNo) {
+    public void setReviewNo(int reviewNo) {
         this.reviewNo = reviewNo;
     }
 
