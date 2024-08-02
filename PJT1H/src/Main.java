@@ -1,5 +1,12 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
+
+import com.google.gson.Gson;
+
 import java.io.*;
 
 public class Main {
@@ -8,11 +15,23 @@ public class Main {
         ReviewManager reviewManager = ReviewManager.getInstance();
         Scanner scanner = new Scanner(System.in);
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
 
-        // 샘플 비디오 추가
-        videoManager.addVideo(new Video(1, "Sample Video 1", "Part 1", "http://example.com/1"));
-        videoManager.addVideo(new Video(2, "Sample Video 2", "Part 2", "http://example.com/2"));
+      //파일 가져오기
+        BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
+        String str = null; //한줄씩 읽어오기 위한 임시변수
+        StringBuilder sb = new StringBuilder();
+        while((str = br.readLine()) != null) {
+            sb.append(str); //한줄식 이어붙인다.
+        }
+        //sb에 모든 문자열 저장
+        Gson gson = new Gson();
+        Video[] arr = gson.fromJson(sb.toString(), Video[].class);
+        
+        // 가져온 파일 videoManager에 추가
+        for(int i=0; i<arr.length;i++) {
+        	videoManager.addVideo(arr[i]);
+        }
+       
 
         while (true) {
         	System.out.println("==============================================================");
@@ -58,7 +77,7 @@ public class Main {
                         System.out.println("현재 등록된 리뷰가 없습니다.");
                     } else {
                         for (VideoReview review : reviews) {
-                            System.out.println("리뷰내용: " + review.getContent());
+                            System.out.println("리뷰 내용: " + review.getContent());
                         }
                     }
                     
@@ -92,5 +111,6 @@ public class Main {
         }
 
         scanner.close();  // 스캐너 닫기
+        br.close();// br 닫기
     }
 }
