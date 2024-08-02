@@ -55,7 +55,7 @@ public class Main {
                         System.out.println("현재 등록된 리뷰가 없습니다.");
                     } else {
                         for (VideoReview review : reviews) {
-                            System.out.println("리뷰 내용: " + review.getContent());
+                            System.out.println("리뷰내용: " + review.getContent());
                         }
                     }
                     
