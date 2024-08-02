@@ -46,7 +46,7 @@ Methods :
 Class : Review
 Attributes :
   - videoNo : int
-  - reviewNo : String
+  - reviewNo : int
   - content :String
 Methods : 
   + getVideoNo() : int
@@ -79,6 +79,9 @@ Methods :
 ```
 
 ## 3. 클래스 간의 관계 정의
-1. 
+1. Video aggergation VideoManager
+2. Review aggeragion ReviewManager
 
-## 4. 구현
+## 4. ChatGPT에게 검수 받기
+1. Review 클래스 이름 변경
+  - Review에서 VideoReview로
