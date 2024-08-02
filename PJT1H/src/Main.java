@@ -3,6 +3,7 @@ import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.List;
 import java.util.Scanner;
+import java.io.*;
 
 import com.google.gson.Gson;
 
@@ -13,6 +14,7 @@ public class Main {
         VideoManager videoManager = VideoManager.getInstance();
         ReviewManager reviewManager = ReviewManager.getInstance();
         Scanner scanner = new Scanner(System.in);
+
 
       //파일 가져오기
         BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream("data/video.json")));
@@ -29,10 +31,7 @@ public class Main {
         for(int i=0; i<arr.length;i++) {
         	videoManager.addVideo(arr[i]);
         }
-        
-//        // 샘플 비디오 추가
-//        videoManager.addVideo(new Video(1, "Sample Video 1", "Part 1", "http://example.com/1"));
-//        videoManager.addVideo(new Video(2, "Sample Video 2", "Part 2", "http://example.com/2"));
+       
 
         while (true) {
         	System.out.println("==============================================================");
@@ -95,7 +94,7 @@ public class Main {
                         System.out.print("리뷰 내용을 입력하세요: ");
                         scanner.nextLine(); // 버퍼 비우기
                         String reviewContent = scanner.nextLine();
-                        VideoReview newReview = new VideoReview(selectedVideo.getNo(),0,reviewContent);
+                        VideoReview newReview = new VideoReview(selectedVideo.getNo(), 0, reviewContent);
                         reviewManager.addReview(newReview);
                         System.out.println("리뷰가 등록되었습니다: " + reviewContent);
                     }
