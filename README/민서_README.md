@@ -4,7 +4,7 @@
 ## 1. drowIO를 이용한 UML 다이어그램 작성(Diagram.png 파일 첨부)
  - 팀원과 함께 대략적인 클래스와 속성, 메서드를 고려한 뒤 이를 drowIO프로그램을 통해 작성
  - drowIO 프로그램을 통해 각 속성의 접근제어자와 클래스 간의 상속 관계를 표시
- - 작성한 다이어그램 이미지를 ChatGPT를 이용하여 검수 후 수
+ - 작성한 다이어그램 이미지를 ChatGPT를 이용하여 검수 후 수정
 
 ## 2. Video.java , VideoManager.java 작성
  - Video.java
@@ -63,7 +63,9 @@ public class Video {
         this.url = url;
     }
 }
+
 '''
+
  - VideoManager.java
 '''
 import java.util.ArrayList;
@@ -106,6 +108,7 @@ public class VideoManager {
         videoList.add(video);
     }
 }
+
 '''
 
 ## 3. Main에서 JSON 데이터 받기
