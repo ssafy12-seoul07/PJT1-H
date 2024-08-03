@@ -8,7 +8,7 @@
 
 ## 2. Video.java , VideoManager.java 작성
  - Video.java
-'''
+```java
 public class Video {
     private int no;         // 비디오 번호
     private String title;   // 비디오 제목
@@ -63,11 +63,10 @@ public class Video {
         this.url = url;
     }
 }
-
-'''
+```
 
  - VideoManager.java
-'''
+```java
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,8 +107,7 @@ public class VideoManager {
         videoList.add(video);
     }
 }
-
-'''
+```
 
 ## 3. Main에서 JSON 데이터 받기
  - Main메서드에서 주어진 video.json을 BufferedReader와 StringBuilder를 이용하여 문자열로 받아와서 배열에 저장
